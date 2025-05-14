@@ -1,12 +1,12 @@
 import pygame
-
 pygame.init()
 
-laius = 626
-kõrgus = 357
+laius = 711
+kõrgus = 400
 aken = pygame.display.set_mode((laius, kõrgus))
 
 pygame.display.set_caption("Džunglimäng")
+taustapilt = pygame.image.load("taust.jpg")
 
 käib = True
 while käib:
@@ -14,7 +14,9 @@ while käib:
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             käib = False
-     
+            
+    aken.blit(taustapilt, (0, 0))
+    
     pygame.display.flip()
 
 pygame.quit()
